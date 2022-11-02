@@ -11,7 +11,7 @@ const GOERLI_PRIVATE_KEY_ACCOUNT_3 =
   "a92699d4e4ef00c80ee258b67fa2c7493f47e9bc844022b30c795921adb6da06";
 
 module.exports = {
-  solidity: "0.8.4",
+  solidity: "0.8.17",
   networks: {
     goerli: {
       url: `https://eth-goerli.alchemyapi.io/v2/B1G80GPybgO9ERVTTHptZgY4xvd5whqP`,

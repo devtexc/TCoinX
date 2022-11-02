@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.17;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
@@ -15,6 +15,10 @@ contract TCOINX is ERC20, ERC20Burnable, ERC20Snapshot, Ownable, Pausable {
     function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
     }
+
+    function decimals() public pure override returns (uint8) {
+		return 6;
+	}
 
     function pause() public onlyOwner {
         _pause();
