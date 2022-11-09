@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 
-describe("Deploy token contract", function () {
+describe("Token contract minting test", function () {
   let tcxToken;
   let deployer;
   let otherAccount1;
@@ -18,7 +18,8 @@ describe("Deploy token contract", function () {
     [deployer, otherAccount1, otherAccount2] = await ethers.getSigners();
   });
 
-  it("Should minted token be credited to deployer", async function () {
+  it("Should minted token be credited to deployer", async function () {    
+    console.log(`\nTest case #1`);
     const balanceBeforeMint = await tcxToken.balanceOf(deployer.address);
     const mintAmount = ethers.BigNumber.from(1000);
     await tcxToken.mint(deployer.address, mintAmount);
@@ -35,6 +36,7 @@ describe("Deploy token contract", function () {
   });
 
   it("Should only deployer can mint tokens", async function () {
+    console.log(`\nTest case #2`);
     // Deployer minting
     console.log(`Minting token for deployer...`);
     const mintAmount = ethers.BigNumber.from(1000);
@@ -65,7 +67,8 @@ describe("Deploy token contract", function () {
     );
   });
 
-  it("Should deployer mint token for other address", async function () {
+  it("Should deployer able to mint token for other address", async function () {
+    console.log(`\nTest case #3`);
     const balanceBeforeMint = await tcxToken.balanceOf(otherAccount1.address);
     const mintAmount = ethers.BigNumber.from(1000);
     await tcxToken.mint(otherAccount1.address, mintAmount);
@@ -73,7 +76,7 @@ describe("Deploy token contract", function () {
 
     console.log(`Account 1: ${otherAccount1.address}`);
     console.log(`Minting amount: ${mintAmount}`);
-    console.log(`Balance:`);
+    console.log(`Balance`);
     console.log(`-----------------------------------------`);
     console.log(`Before: ${balanceBeforeMint}`);
     console.log(`After : ${balanceAfterMint}`);

@@ -6,7 +6,7 @@ describe("Token contract deployment", function () {
   let deployer;
 
   // This function will initiate everytime this test is run.
-  beforeEach(async function () {
+  before(async function () {
     const Token = await ethers.getContractFactory("TCOINX");
 
     // deploy tcx token contract
