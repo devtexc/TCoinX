@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 
-describe("Token contract snapshot test", function () {
+describe("Token releasing test", function () {
   let tcxToken;
   let randToken;
   let deployer;

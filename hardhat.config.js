@@ -27,6 +27,12 @@ module.exports = {
     goerli: {
       url: `https://eth-goerli.alchemyapi.io/v2/B1G80GPybgO9ERVTTHptZgY4xvd5whqP`,
       accounts: [GOERLI_PRIVATE_KEY_ACCOUNT_5],
+      gasPrice: 30000000000, // 30 GWEI
+    },
+    mainnet: {
+      url: `https://eth-mainnet.alchemyapi.io/v2/B1G80GPybgO9ERVTTHptZgY4xvd5whqP`,
+      accounts: [GOERLI_PRIVATE_KEY_ACCOUNT_5],
+      gasPrice: 30000000000, // 30 GWEI
     },
   },
   mocha: {
